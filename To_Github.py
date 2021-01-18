@@ -74,8 +74,8 @@ def get_dates(type_, repo):
     return dates
 
 
-# path to your github repository
-git_path = 'C:/Users/jakub/Desktop/Programming/GitHub'
+# path to the github repository
+git_path = 'C:/Users/jakub/Desktop/Programming/GitHub/Koronawirus'
 
 g = Github(os.environ.get('github_access_token'))
 repo = g.get_user().get_repo('MyPortfolio')
@@ -110,7 +110,7 @@ for folder, filename in types:
         date_datetime = datetime.strptime(date, '%d.%m.%Y')
         month = date_datetime.strftime('%B')
 
-        new_path = f'{git_path}/Koronawirus/Results/{month}/{folder}'
+        new_path = f'{git_path}/Results/{month}/{folder}'
         Path(new_path).mkdir(parents=True, exist_ok=True)
         os.replace(f'png/{filename}.{date}.png', f'{new_path}/{date}.png')
         print('')
