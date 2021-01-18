@@ -32,11 +32,11 @@ def get_dates(type_, repo):
 
     uploaded = []
     try:
-        for month_content in repo.get_contents(f'Koronawirus/Results'):
+        for month_content in repo.get_contents(f'Results'):
             path = month_content.path
             month = path.split('/')[-1]
             try:
-                for file_content in repo.get_contents(f'Koronawirus/Results/{month}/{type_}'):
+                for file_content in repo.get_contents(f'Results/{month}/{type_}'):
                     uploaded.append(file_content.path[-14:-4])
             except:
                 continue
@@ -78,7 +78,7 @@ def get_dates(type_, repo):
 git_path = 'C:/Users/jakub/Desktop/Programming/GitHub/Koronawirus'
 
 g = Github(os.environ.get('github_access_token'))
-repo = g.get_user().get_repo('MyPortfolio')
+repo = g.get_user().get_repo('Koronawirus')
 
 types = [('Standard', 'Comparison'),
          ('With predictions', 'Prediction_comparison')]
