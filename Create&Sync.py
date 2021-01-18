@@ -27,15 +27,15 @@ def get_dates(type_, repo):
 
     uploaded = []
     try:
-        for year_content in repo.get_contents(f'Koronawirus/Results'):
+        for year_content in repo.get_contents(f'Results'):
             path = year_content.path
             year = path.split('/')[-1]
             try:
-                for month_content in repo.get_contents(f'Koronawirus/Results/{year}'):
+                for month_content in repo.get_contents(f'Results/{year}'):
                     path = month_content.path
                     month = path.split('/')[-1]
                     try:
-                        for file_content in repo.get_contents(f'Koronawirus/Results/{year}/{month}/{type_}'):
+                        for file_content in repo.get_contents(f'Results/{year}/{month}/{type_}'):
                             uploaded.append(file_content.path[-14:-4])
                     except:
                         continue
@@ -76,10 +76,10 @@ def get_dates(type_, repo):
 
 
 # path to your github repository
-git_path = 'C:/Users/jakub/Desktop/Programming/GitHub'
+git_path = 'C:/Users/jakub/Desktop/Programming/GitHub/Koronawirus'
 
 g = Github(os.environ.get('github_access_token'))
-repo = g.get_user().get_repo('MyPortfolio')
+repo = g.get_user().get_repo('Koronawirus')
 
 types = [('Standard', 'Comparison'),
          ('With predictions', 'Prediction_comparison')]
@@ -113,7 +113,7 @@ for folder, filename in types:
         year = date_datetime.strftime('%Y')
         month = date_datetime.strftime('%B')
 
-        new_path = f'{git_path}/Koronawirus/Results/{year}/{month}/{folder}'
+        new_path = f'{git_path}/Results/{year}/{month}/{folder}'
         Path(new_path).mkdir(parents=True, exist_ok=True)
         os.replace(f'png/{filename}.{date}.png', f'{new_path}/{date}.png')
     print('\n')
