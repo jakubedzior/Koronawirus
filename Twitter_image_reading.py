@@ -407,7 +407,7 @@ webbrowser.open(
     'https://en.wikipedia.org/w/index.php?title=Template:COVID-19_pandemic_data/Poland_medical_cases&action=edit')
 
 while True:
-    page = locateOnScreen('Wiki_logo.png')
+    page = locateOnScreen('Wiki_pic.png')
     if page is not None:
         break
 
