@@ -27,7 +27,7 @@ def get_dates(type_, repo):
 
     uploaded = []
     try:
-        for year_content in repo.get_contents(f'Results'):
+        for year_content in repo.get_contents('Results'):
             path = year_content.path
             year = path.split('/')[-1]
             try:
@@ -37,7 +37,7 @@ def get_dates(type_, repo):
                     try:
                         for file_content in repo.get_contents(f'Results/{year}/{month}/{type_}'):
                             uploaded.append(file_content.path[-14:-4])
-                    except:
+                    except Exception:
                         continue
             except:
                 continue

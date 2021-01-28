@@ -1,15 +1,13 @@
 import datetime
-from pathlib import Path
 import pandas as pd
 from time import sleep
-import csv
 import glob
 import os
 from selenium import webdriver
-from bs4 import BeautifulSoup
 import webbrowser
 import pyperclip
 from pynput.keyboard import Key, Controller
+
 
 def await_new_copy():
     clipboard_old = pyperclip.paste()

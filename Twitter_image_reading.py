@@ -1,11 +1,8 @@
 import datetime
-from pathlib import Path
 import pandas as pd
 from time import sleep
-import csv
 import glob
 import os
-import sys
 from selenium import webdriver
 import logging
 from selenium.webdriver.remote.remote_connection import LOGGER

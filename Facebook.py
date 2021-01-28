@@ -1,15 +1,7 @@
 from selenium import webdriver
-from time import sleep
-import os
-import glob
-from selenium.webdriver.common.keys import Keys
-from pyperclip import copy
-from pyautogui import hotkey
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException, ElementNotInteractableException
 
 
 print("Opening facebook...")
